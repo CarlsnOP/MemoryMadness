@@ -11,8 +11,16 @@ config_version=5
 [application]
 
 config/name="Memory Madness"
+run/main_scene="res://scenes/masterscene/master_scene.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.png"
+
+[autoload]
+
+SignalManager="*res://singletons/signal_manager.gd"
+ImageManager="*res://singletons/image_manager.gd"
+SoundManager="*res://singletons/sound_manager.gd"
+GameManager="*res://singletons/game_manager.gd"
 
 [display]
 

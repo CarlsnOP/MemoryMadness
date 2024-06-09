@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://2yd7tm7det8m"]
+
+[ext_resource type="Texture2D" uid="uid://tgr2kbv03gd4" path="res://assets/glitch/cabbage.png" id="1_febof"]
+[ext_resource type="Script" path="res://scenes/frontsprite/front_sprite.gd" id="2_1rpby"]
+
+[node name="FrontSprite" type="TextureRect"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(32, 32)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("1_febof")
+script = ExtResource("2_1rpby")
