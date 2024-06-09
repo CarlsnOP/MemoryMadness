@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://boyxu7nbxp7oo"]
+
+[ext_resource type="Texture2D" uid="uid://qk41r3dtb51g" path="res://assets/frames/hidden_frame_blank.png" id="1_70xj8"]
+[ext_resource type="Texture2D" uid="uid://bka5vfnososis" path="res://assets/frames/blue_frame.png" id="2_h4w6y"]
+[ext_resource type="Script" path="res://scenes/memorytile/memory_tile.gd" id="2_r0s2x"]
+[ext_resource type="Texture2D" uid="uid://tgr2kbv03gd4" path="res://assets/glitch/cabbage.png" id="3_4yrsj"]
+
+[node name="MemoryTile" type="TextureButton" groups=["tile"]]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -42.0
+offset_right = 42.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(42, 42)
+texture_normal = ExtResource("1_70xj8")
+script = ExtResource("2_r0s2x")
+
+[node name="FrameImage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -42.0
+offset_right = 42.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(42, 42)
+texture = ExtResource("2_h4w6y")
+
+[node name="ItemImage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("3_4yrsj")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

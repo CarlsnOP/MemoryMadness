@@ -1,19 +1,26 @@
 extends Node
 
-const FRAME_IMAGES: Array = [
+var FRAME_IMAGES: Array = [
 	preload("res://assets/frames/blue_frame.png"),
 	preload("res://assets/frames/yellow_frame.png"),
 	preload("res://assets/frames/green_frame.png"),
 	preload("res://assets/frames/red_frame.png"),
 ]
 
-
 var _item_images: Array = []
 
-
-
 func _ready():
-	load_item_images()
+	#load_item_images()
+	var ir: ImageFilesList = load("res://image_resources/ImageFilesList.tres")
+	for fn in ir.file_names:
+		add_file_to_list_2(fn)
+
+func add_file_to_list_2(fn: String) -> void:
+	var ii_dict = {
+		"item_name": fn.rstrip(".png"),
+		"item_texture": load(fn)
+	}
+	_item_images.append(ii_dict)
 
 func add_file_to_list(fn: String, path: String) -> void:
 	var full_path = path + "/" + fn

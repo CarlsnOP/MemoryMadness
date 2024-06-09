@@ -1,6 +1,6 @@
 extends Node
 
-# -- game_manager -- #
+const GROUP_TILE: String = "tile"
 
 const LEVELS: Dictionary = {
 	1: { "rows": 2, "cols": 2 },
@@ -30,4 +30,10 @@ func get_level_selection(level_num: int) -> Dictionary:
 		"num_cols": l_data.cols,
 		"image_list": selected_level_images
 	}
+
+func clear_nodes_of_group(g_name: String) -> void:
+	for n in get_tree().get_nodes_in_group(g_name):
+		n.queue_free()
+
+
 
